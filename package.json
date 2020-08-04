@@ -58,5 +58,8 @@
       "dist/select.css"
     ]
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }

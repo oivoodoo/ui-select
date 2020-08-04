@@ -757,7 +757,7 @@ uis.controller('uiSelectCtrl',
     if (activeIndex != null)
       $element.find('input').attr(
         'aria-activedescendant',
-        'ui-select-choices-row-' + ctrl.generatedId + '-' + activeIndex);
+        'ui-select-choices-row-' + ctrl.generatedId + '-' + String(activeIndex + 1));
   });
 
   $scope.$watch('$select.open', function(open) {

@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.19.9 - 2020-08-04T21:31:26.726Z
+ * Version: 0.19.9 - 2020-08-04T21:54:02.839Z
  * License: MIT
  */
 
@@ -1034,7 +1034,7 @@ uis.controller('uiSelectCtrl',
     if (activeIndex != null)
       $element.find('input').attr(
         'aria-activedescendant',
-        'ui-select-choices-row-' + ctrl.generatedId + '-' + activeIndex);
+        'ui-select-choices-row-' + ctrl.generatedId + '-' + String(activeIndex + 1));
   });
 
   $scope.$watch('$select.open', function(open) {

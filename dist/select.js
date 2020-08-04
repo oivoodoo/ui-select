@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.19.9 - 2020-08-04T20:22:12.895Z
+ * Version: 0.19.9 - 2020-08-04T20:56:33.438Z
  * License: MIT
  */
 
@@ -862,7 +862,7 @@ uis.controller('uiSelectCtrl',
         break;
       case KEY.UP:
         if (!ctrl.open && ctrl.multiple) ctrl.activate(false, true); //In case its the search input in 'multiple' mode
-        else if (ctrl.activeIndex > 0) {
+        else if (ctrl.activeIndex > -1) {
           var idxmin = --ctrl.activeIndex;
           while(_isItemDisabled(ctrl.items[idxmin]) && idxmin > 0) {
             ctrl.activeIndex = --idxmin;

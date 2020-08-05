@@ -754,7 +754,7 @@ uis.controller('uiSelectCtrl',
   });
 
   $scope.$watch('$select.activeIndex', function(activeIndex) {
-    if (activeIndex)
+    if (activeIndex != null)
       $element.find('input').attr(
         'aria-activedescendant',
         'ui-select-choices-row-' + ctrl.generatedId + '-' + activeIndex);

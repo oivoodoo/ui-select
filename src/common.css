@@ -302,7 +302,7 @@ body > .ui-select-bootstrap.open {
   border-right: 1px solid #428bca;
 }
 
-.ui-select-dropdown.dropdown-menu {
+.ui-select-dropdown .dropdown-menu {
   padding: 0;
   list-style: none;
 }

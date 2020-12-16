@@ -302,16 +302,11 @@ body > .ui-select-bootstrap.open {
   border-right: 1px solid #428bca;
 }
 
-.ui-select-choices {
-  padding: 5px 0;
-  margin: 0;
-  list-style: none;
-}
 
-.ui-select-choices-content {
+.ui-select-bootstrap .ui-select-choices {
   padding: 5px 0;
   margin: 0;
-  list-style: none;
+  list-style: none !important;
 }
 
 .ui-select-bootstrap .ui-select-header-group-selectable:hover {

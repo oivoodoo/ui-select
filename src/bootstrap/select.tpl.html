@@ -5,6 +5,7 @@
   <div
     role='combobox'
     aria-haspopup="listbox"
+    aria-live="polite"
     aria-expanded="false"
     aria-owns="ui-select-choices-{{ $select.generatedId }}">
 
@@ -15,6 +16,7 @@
           placeholder="{{$select.placeholder}}"
           class="form-control ui-select-search"
           aria-label="{{ $select.baseTitle }}"
+          aria-live="polite"
           ng-class="{ 'ui-select-search-hidden' : !$select.searchEnabled }"
           ng-model="$select.search"
           ng-show="$select.open">

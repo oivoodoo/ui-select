@@ -758,6 +758,11 @@ uis.controller('uiSelectCtrl',
       var id = 'ui-select-choices-row-' + ctrl.generatedId + '-' + activeIndex;
       $element.find('input').attr('aria-activedescendant', id);
       $element.find('input').parent().attr('aria-expanded', 'true');
+
+      var item = ctrl.items[activeIndex];
+      if (item) {
+        ctrl.activeItemName = item.itemName;
+      }
     }
   });
 

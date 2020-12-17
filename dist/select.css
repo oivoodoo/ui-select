@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.19.9 - 2020-12-22T14:59:10.898Z
+ * Version: 0.19.9 - 2020-12-22T15:01:10.551Z
  * License: MIT
  */
 
@@ -462,4 +462,15 @@ body > .ui-select-bootstrap.open {
 
 .ui-select-refreshing.ng-animate {
   -webkit-animation: none 0s;
+}
+
+.ui-select-visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
 }

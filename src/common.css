@@ -302,16 +302,11 @@ body > .ui-select-bootstrap.open {
   border-right: 1px solid #428bca;
 }
 
-.ui-select-choices {
-  padding: 5px 0;
-  margin: 0;
-  list-style: none;
-}
 
-.ui-select-choices-content {
+.ui-select-bootstrap .ui-select-choices {
   padding: 5px 0;
   margin: 0;
-  list-style: none;
+  list-style: none !important;
 }
 
 .ui-select-bootstrap .ui-select-header-group-selectable:hover {
@@ -459,4 +454,15 @@ body > .ui-select-bootstrap.open {
 
 .ui-select-refreshing.ng-animate {
   -webkit-animation: none 0s;
+}
+
+.ui-select-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

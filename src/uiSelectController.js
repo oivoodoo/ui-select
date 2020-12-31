@@ -131,6 +131,13 @@ uis.controller('uiSelectCtrl',
         ctrl.activeIndex = 0;
       }
 
+      if ( ctrl.activeIndex === 0 && !ctrl.multiple) {
+        var id = 'ui-select-choices-row-' + ctrl.generatedId + '-0';
+        $element.find('input').attr('aria-activedescendant', id);
+        $element.find('input').parent().attr('aria-expanded', 'true');
+      }
+
+
       var container = $element.querySelectorAll('.ui-select-choices-content');
       var searchInput = $element.querySelectorAll('.ui-select-search');
       if (ctrl.$animate && ctrl.$animate.on && ctrl.$animate.enabled(container[0])) {

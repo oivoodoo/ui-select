@@ -596,7 +596,10 @@ uis.controller('uiSelectCtrl',
     switch (key) {
       case KEY.DOWN:
         if (!ctrl.open && ctrl.multiple) ctrl.activate(false, true); //In case its the search input in 'multiple' mode
-        else if (ctrl.activeIndex < ctrl.items.length - 1) {
+        else if (ctrl.activeIndex <= ctrl.items.length - 1) {
+          if (ctrl.activeIndex === ctrl.items.length - 1) {
+            ctrl.activeIndex = -1; // when the activeIndex is at the last element, next idx has to be 0
+          }
           var idx = ++ctrl.activeIndex;
           while(_isItemDisabled(ctrl.items[idx]) && idx < ctrl.items.length) {
             ctrl.activeIndex = ++idx;
@@ -605,7 +608,11 @@ uis.controller('uiSelectCtrl',
         break;
       case KEY.UP:
         if (!ctrl.open && ctrl.multiple) ctrl.activate(false, true); //In case its the search input in 'multiple' mode
-        else if (ctrl.activeIndex > 0) {
+        else if (ctrl.activeIndex >= 0) {
+          if (ctrl.activeIndex === 0) {
+            // when the activeIndex is at the first element, next idx has to be last elements idx (total items - 1)
+            ctrl.activeIndex = ctrl.items.length;
+          }
           var idxmin = --ctrl.activeIndex;
           while(_isItemDisabled(ctrl.items[idxmin]) && idxmin > 0) {
             ctrl.activeIndex = --idxmin;
@@ -787,4 +794,18 @@ uis.controller('uiSelectCtrl',
       $element.find('input').parent().attr('aria-expanded', 'false');
     }
   });
+
+  $scope.$watch('$select.items', function(items) {
+    if (items.length === 0) {
+      var noChoiceId = 'ui-select-no-choice-' + ctrl.generatedId;
+      $element.find('input').removeAttr('aria-labelledby');
+      $element.find('input').attr('aria-labelledby', noChoiceId);
+    }
+     else {
+      var matchTextId = 'ui-select-match-text-' + ctrl.generatedId;
+      $element.find('input').removeAttr('aria-labelledby');
+      $element.find('input').attr('aria-describedby', matchTextId);
+    }
+  });
+
 }]);

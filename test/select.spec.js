@@ -3316,9 +3316,9 @@ describe('ui-select tests', function () {
   describe('accessibility', function () {
     it('should have baseTitle in scope', function () {
       expect(createUiSelect().scope().$select.baseTitle).toBe('Select box');
-      expect(createUiSelect().scope().$select.focusserTitle).toBe('Select box focus');
+      expect(createUiSelect().scope().$select.focusserTitle).toBe('Select box');
       expect(createUiSelect({ title: 'Choose a person' }).scope().$select.baseTitle).toBe('Choose a person');
-      expect(createUiSelect({ title: 'Choose a person' }).scope().$select.focusserTitle).toBe('Choose a person focus');
+      expect(createUiSelect({ title: 'Choose a person' }).scope().$select.focusserTitle).toBe('Choose a person');
     });
 
     it('should have aria-label on all input and button elements', function () {

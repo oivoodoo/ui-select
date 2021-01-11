@@ -1,4 +1,4 @@
-<span class="ui-select-match" id="ui-select-match-text-{{ $select.generatedId }}" aria-live="assertive">
+<span class="ui-select-match" id="ui-select-match-text-{{ $select.generatedId }}">
   <span ng-repeat="$item in $select.selected track by $index">
     <span
       class="ui-select-match-item btn btn-default btn-xs"
@@ -8,7 +8,7 @@
       ng-click="$selectMultiple.activeMatchIndex = $index;"
       ng-class="{'btn-primary':$selectMultiple.activeMatchIndex === $index, 'select-locked':$select.isLocked(this, $index)}"
       ui-select-sort="$select.selected">
-        <span class="close ui-select-match-close" ng-hide="$select.disabled" ng-click="$selectMultiple.removeChoice($index)" aria-hidden="true">&nbsp;&times;</span>
+        <span class="close ui-select-match-close" ng-hide="$select.disabled" ng-click="$selectMultiple.removeChoice($index)">&nbsp;&times;</span>
         <span uis-transclude-append></span>
     </span>
   </span>

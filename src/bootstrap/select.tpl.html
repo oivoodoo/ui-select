@@ -6,7 +6,12 @@
   <div role='combobox' aria-haspopup="listbox" aria-expanded="false"
     aria-owns="ui-select-choices-{{ $select.generatedId }}">
 
-    <p class="ui-select-dropdown-notification ui-select-visually-hidden" aria-live="assertive"></p>
+    <div
+      class="ui-select-dropdown-notification ui-select-visually-hidden"
+      aria-live="assertive"
+      role="region"
+      autofocus>
+    </div>
 
     <input type="search" autocomplete="off" tabindex="-1" placeholder="{{$select.placeholder}}"
       class="form-control ui-select-search" aria-label="{{ $select.baseTitle }}"

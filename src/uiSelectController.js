@@ -264,11 +264,13 @@ uis.controller('uiSelectCtrl',
           // Add voice over notification message when we have the items to choose
           // in the list. By default the first item is selected and we need to notify
           // user about it.
-            var message = 'Now you have ' + data.length + ' items to choose. The currently selected item is ' + data[0].name;
+          var message = 'Now you have ' + data.length + ' items to choose. The currently selected item is ' + data[0].name;
 
+          $timeout(function () {
             $element
               .find('.ui-select-visually-hidden.ui-select-dropdown-notification')
               .text(message);
+          });
         }
       }else{
         if ( data !== undefined && data !== null ) {

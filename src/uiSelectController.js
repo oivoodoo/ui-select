@@ -300,6 +300,11 @@ uis.controller('uiSelectCtrl',
         } else {
           //Remove already selected items (ex: while searching)
           //TODO Should add a test
+          // Remove the previous VoiceOver message.
+          $element
+            .find('.ui-select-visually-hidden.ui-select-dropdown-notification')
+            .html('');
+
           ctrl.refreshItems(items);
 
           //update the view value with fresh data from items, if there is a valid model value

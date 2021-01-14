@@ -46,6 +46,12 @@ uis.controller('uiSelectCtrl',
   ctrl.$filter = $filter;
   ctrl.$element = $element;
 
+  var setNotification = function (message) {
+    $element
+      .find('.ui-select-visually-hidden.ui-select-dropdown-notification')
+      .html(message);
+  };
+
   // Use $injector to check for $animate and store a reference to it
   ctrl.$animate = (function () {
     try {
@@ -267,9 +273,7 @@ uis.controller('uiSelectCtrl',
           var message = data[0].name + ' 1 of ' + data.length;
           var digest = Math.random();
 
-          $element
-            .find('.ui-select-visually-hidden.ui-select-dropdown-notification')
-            .html(message + '<span style="display: none;">' + digest + '</span>');
+          setNotification(message + '<span style="display: none;">' + digest + '</span>');
         }
       }else{
         if ( data !== undefined && data !== null ) {
@@ -301,9 +305,7 @@ uis.controller('uiSelectCtrl',
           //Remove already selected items (ex: while searching)
           //TODO Should add a test
           // Remove the previous VoiceOver message.
-          $element
-            .find('.ui-select-visually-hidden.ui-select-dropdown-notification')
-            .html('');
+          setNotification('');
 
           ctrl.refreshItems(items);
 
